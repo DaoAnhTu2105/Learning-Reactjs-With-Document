@@ -1,0 +1,25 @@
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-item__btn, .btn-send {
+    width: 100px;
+    height: 35px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.btn-send {
+    width: auto;
+    padding: 0 20px;
+}
+
+.chat-container {
+    width: 200%;
+    height: 100px;
+}
