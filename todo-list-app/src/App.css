@@ -1,0 +1,59 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.input-task {
+  width: 250px;
+  height: 50px;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.btn-submit {
+  height: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.list-task__title {
+  font-size: 20px;
+}
+
+.component__add-task {
+  padding-bottom: 30px;
+}
+
+.list-task__item {
+  margin: 10px 0;
+  display: flex;
+  gap: 5px;
+  justify-content: start;
+  align-items: center;
+}
+
+.item-input, .update-task, .delete-task {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 18px;
+}
+
+.item-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.update-task, .delete-task {
+  cursor: pointer;
+}
