@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 export default function ListTask({ task, dispatch }) {
   const [editId, setEditId] = useState(null);
   const [changeTask, setChangeTask] = useState("");
@@ -15,6 +16,15 @@ export default function ListTask({ task, dispatch }) {
       });
     }
     setEditId(null);
+  };
+  const hanleDelete = (id) => {
+    let confirmUpdate = window.confirm("Do you want to delete this task ?");
+    if (confirmUpdate === true) {
+      dispatch({
+        type: "delete",
+        id: id,
+      });
+    }
   };
   return (
     <>
@@ -69,7 +79,12 @@ export default function ListTask({ task, dispatch }) {
                   >
                     {editId === item.id ? "Save" : "Edit"}
                   </button>
-                  <button className="delete-task">Delete</button>
+                  <button
+                    className="delete-task"
+                    onClick={() => hanleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
                 </li>
               );
             })}

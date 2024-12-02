@@ -1,5 +1,4 @@
 export const initialTask = [];
-export let nextId = 0;
 
 export default function TaskReducer(state, action) {
   switch (action.type) {
@@ -7,7 +6,7 @@ export default function TaskReducer(state, action) {
       return [
         ...state,
         {
-          id: nextId++,
+          id: action.id,
           taskName: action.taskName,
           status: action.status,
         },
@@ -27,7 +26,8 @@ export default function TaskReducer(state, action) {
       });
     }
     case "delete": {
-      return {};
+      const removeItem = state.filter((item) => item.id !== action.id);
+      return removeItem;
     }
     default: {
       throw Error("Unknown action: " + action.type);

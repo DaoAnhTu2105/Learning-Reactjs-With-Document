@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
+export let nextId = 0;
+
 export default function AddTask({ dispatch }) {
   const focusRef = useRef(null);
   const [task, setTask] = useState(null);
@@ -9,7 +11,7 @@ export default function AddTask({ dispatch }) {
   }, []);
   const handleAddTask = () => {
     if (task) {
-      dispatch({ type: "add", taskName: task, status: false });
+      dispatch({ type: "add", taskName: task, status: false, id: nextId++ });
       setTask("");
     } else {
       alert("Task must not empty!!!");
