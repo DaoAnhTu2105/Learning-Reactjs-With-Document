@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.section {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.section:first-child {
+  margin: 20px;
+}

@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { TaskDispatchContext } from "./taskContext";
 
 export let nextId = 0;
 
-export default function AddTask({ dispatch }) {
+export default function AddTask() {
   const focusRef = useRef(null);
   const [task, setTask] = useState(null);
+  const dispatch = useContext(TaskDispatchContext);
 
   useEffect(() => {
     focusRef.current.focus();

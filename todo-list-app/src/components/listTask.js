@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TasksContext, TaskDispatchContext } from "./taskContext";
 
-export default function ListTask({ task, dispatch }) {
+export default function ListTask() {
   const [editId, setEditId] = useState(null);
   const [changeTask, setChangeTask] = useState("");
   const [taskStatus, setTaskStatus] = useState(null);
+  const task = useContext(TasksContext);
+  const dispatch = useContext(TaskDispatchContext);
 
   const handleSave = (item) => {
     let confirmUpdate = window.confirm("Do you want to update this task ?");
@@ -45,7 +48,6 @@ export default function ListTask({ task, dispatch }) {
                     value={taskStatus}
                     className="item-checkbox"
                     onChange={(e) => {
-                      console.log(e.target.checked);
                       setTaskStatus(e.target.checked);
                     }}
                     disabled={editId === null}
